@@ -50,22 +50,54 @@ let config = {
 			position: "top_left"
 		},
 		{
-			module: "calendar",
-			header: "US Holidays",
-			position: "top_left",
-			config: {
-				calendars: [
-					{
-						fetchInterval: 7 * 24 * 60 * 60 * 1000,
-						symbol: "calendar-check",
-						url: "https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics"
-					}
-				]
+			module: "MMM-MoonPhase",
+  			position: "top_left",
+  			config: {
+    			updateInterval: 43200000,
+				hemisphere: "N",
+				resolution: "detailed",
+				basicColor: "white",
+				title: true, 
+				phase: true, 
+				size: 120,
+				moonAlign: "left",
+				textAlign: "left",
+				alpha: 0.8
 			}
 		},
 		{
+    		module: "MMM-Snow",
+    		position: "fullscreen_below",
+    		config: {
+        		flakeCount: 100,
+        		theme: "winter"
+    		}
+		},
+		{
 			module: "compliments",
-			position: "lower_third"
+			position: "lower_third",
+			config: {
+				compliments: {
+					anytime: ["Hey there sexy!"],
+
+					morning: [
+						"Sistem radi.Korisnik još ne",
+						"Buđenje uspešno. Motivacija...u potrazi"
+					],
+
+					afternoon: [
+						"If you came this far, it means that day is going well.",
+						"Still standing? Impressive.",
+						"Sistem stabilan. Energija..diskutabilna.",
+						"Pravac kunjica da napraviš kaficu."
+					],
+
+					evening: [
+						"It's okay to slow down now.",
+						"Vreme je za opuštanje!"
+					]
+				}
+			}
 		},
 		{
 			module: "weather",
@@ -73,19 +105,19 @@ let config = {
 			config: {
 				weatherProvider: "openmeteo",
 				type: "current",
-				lat: 40.776676,
-				lon: -73.971321
+				lat: 43.8556,
+				lon: 19.8425
 			}
 		},
 		{
 			module: "weather",
 			position: "top_right",
-			header: "Weather Forecast",
+			header: "Vreme u Užicu",
 			config: {
 				weatherProvider: "openmeteo",
 				type: "forecast",
-				lat: 40.776676,
-				lon: -73.971321
+				lat: 43.8556,
+				lon: 19.8425
 			}
 		},
 		{
@@ -94,8 +126,24 @@ let config = {
 			config: {
 				feeds: [
 					{
-						title: "New York Times",
-						url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+						title: "Kako Tanjug javlja",
+						url: "https://www.tanjug.rs/rss/ekonomija/srbija"
+					},
+					{
+						title: "Kako Tanjug javlja",
+						url: "https://www.tanjug.rs/rss/ekonomija/svet"
+					},
+					{
+						title: "Kako Tanjug javlja",
+						url: "https://www.tanjug.rs/rss/nauka"
+					},
+					{
+						title: "Kako Tanjug javlja",
+						url: "https://www.tanjug.rs/rss/zanimljivosti"
+					},
+					{
+						title: "Kako Tanjug javlja",
+						url: "https://www.tanjug.rs/rss/ekonomija/kompanije"
 					}
 				],
 				showSourceTitle: true,
